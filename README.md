@@ -20,7 +20,7 @@ IRIS Lab, Stanford University
 
 ### Setup
 
-Install dependencies of the diffusion policy (~20 min)
+Install dependencies of the diffusion policy (approx. 20 min)
 ```
 mamba env create -f conda_environment.yaml
 mamba activate bid
@@ -36,40 +36,40 @@ Download pre-trained checkpoints
 gdown https://drive.google.com/drive/folders/1o8rf2Lq91D_DCq7RqZVyFAP-eMcLOAP2 -O . --folder
 ```
 
-Download [online data](https://diffusion-policy.cs.columbia.edu/data/training/) (optional, required for model training)
+Download [online data](https://diffusion-policy.cs.columbia.edu/data/training/) (optional, required only for model training)
 ```
 bash script/download_dataset.sh
 ```
 
 ### Decoding Scripts
 
-The [sampler](diffusion_policy/sampler) folder contains a collection of test-time decoding / sampling algorithms.
+The [sampler](diffusion_policy/sampler) folder contains a collection of test-time sampling/decoding algorithms.
 
-- random sampling baseline
+- Random Sampling Baseline
 ```
 bash script/eval_random.sh
 ```
 
-- warmstart diffusion
+- Warmstart Diffusion Baseline
 ```
 bash script/eval_warmstart.sh
 ```
 
-- temporal ensembling (ema)
+- Temporal Ensembling Baseline (EMA)
 ```
 bash script/eval_ema.sh
 ```
 
-- bidirectional decoding (ours)
+- Our Bidirectional Decoding (BID)
 ```
 bash script/eval_bid.sh
 ```
 
-### Expected results
+### Expected Results
 
-The [notebook](notebook/dp.ipynb) script summarizes the results of different algorithms.
+The [notebook](notebook/dp.ipynb) script summarizes representative results from different algorithms for the Pust-T task in deterministic and stochastic environments.
 
-- Results on the Pust-T task in a deterministic environment
+- Deterministic environment (`noise=0.0`)
 
 |method|result|
 |:----|:----|
@@ -79,7 +79,7 @@ The [notebook](notebook/dp.ipynb) script summarizes the results of different alg
 |EMA (ah=8)|0.860|
 |BID (ah=8)|**0.916**|
 
-- Results on the Pust-T task in a stochastic environment
+- Stochastic environment (`noise=1.0`)
 
 |method|result|
 |:----|:----|
@@ -91,7 +91,7 @@ The [notebook](notebook/dp.ipynb) script summarizes the results of different alg
 
 ### Citation
 
-If you find this code useful for your research, please cite our paper:
+If you find this code useful for your research, please consider citing our paper:
 ```bibtex
 @article{liu2024bidirectional,
   title   = {Bidirectional Decoding: Improving Action Chunking via Closed-Loop Resampling},
@@ -103,4 +103,4 @@ If you find this code useful for your research, please cite our paper:
 
 ### Acknowledgement
 
-Our implementation is built upon the excellent codebase of [Diffusion Policy](https://github.com/real-stanford/diffusion_policy)
+Our implementation is built upon the excellent [Diffusion Policy](https://github.com/real-stanford/diffusion_policy) codebase
