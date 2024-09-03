@@ -95,6 +95,11 @@ The [notebook](notebook/dp.ipynb) script summarizes representative results from 
 |BID (ah=1)|**0.870**|
 
 - Dynamics object (`perturb=1.0`)
+Random Open-Loop             | Random Closed-Loop
+:-------------------------:|:-------------------------:
+<img src="animation/random/0.0/th16_oh2_ah8/media/20001.gif" width="200" /> | <img src="animation/random/0.0/th16_oh2_ah1/media/20001.gif" width="200" />
+EMA Closed-Loop             |  BID Closed-Loop
+<img src="animation/ema_0.5/0.0/th16_oh2_ah1/media/20001.gif" width="200" /> | <img src="animation/bid_15_0.5/0.0/th16_oh2_ah1/media/20001.gif" width="200" />
 
 
 ### Citation
