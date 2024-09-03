@@ -1,6 +1,6 @@
 # Bidirectional Decoding
 
-**[`Website`](https://bid-robot.github.io) | [`Paper`](https://arxiv.org/abs/2408.17355) | [`BiD + LeRobot`](https://github.com/Jubayer-Hamid/bid_lerobot) | [`BiD + DP`](https://github.com/YuejiangLIU/bid_dp)**
+**[`Website`](https://bid-robot.github.io) | [`Paper`](https://arxiv.org/abs/2408.17355) | [`BiD + LeRobot`](https://github.com/Jubayer-Hamid/bid_lerobot) | [`BiD + Diffusion`](https://github.com/YuejiangLIU/bid_diffusion)**
 
 This repo contains the official implementation of \
 Bidirectional Decoding: Improving Action Chunking via Closed-Loop Resampling. \
