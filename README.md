@@ -94,7 +94,7 @@ The [notebook](notebook/dp.ipynb) script summarizes representative results from 
 |EMA (ah=1)|0.822|
 |BID (ah=1)|**0.870**|
 
-## Dynamics object (`perturb=1.0`)
+- Dynamics object (`perturb=1.0`)
 
 | Vanilla Open-Loop          | Vanilla Closed-Loop       | EMA Closed-Loop        | BID Closed-Loop        |
 |:-------------------------:|:------------------------:|:----------------------:|:----------------------:|
