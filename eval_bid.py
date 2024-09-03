@@ -78,7 +78,7 @@ def main(checkpoint, output_dir, noise, perturb, ahorizon, ntest, sampler, nsamp
 
     # turn off video
     cfg.task.env_runner['n_train_vis'] = 0
-    cfg.task.env_runner['n_test_vis'] = 1
+    cfg.task.env_runner['n_test_vis'] = 2
     cfg.task.env_runner['n_train'] = 1
     cfg.task.env_runner['n_test'] = ntest
     cfg.task.env_runner['n_action_steps'] = ahorizon
@@ -96,10 +96,16 @@ def main(checkpoint, output_dir, noise, perturb, ahorizon, ntest, sampler, nsamp
     print(f"  pred_horizon = {policy.horizon: <20} act_horizon = {policy.n_action_steps: <15} obsv_horizon = {policy.n_obs_steps}")
 
     # run eval
-    env_runner = hydra.utils.instantiate(
-        cfg.task.env_runner,
-        output_dir=output_dir,
-        perturb_level=perturb)
+    if perturb > 0:
+        env_runner = hydra.utils.instantiate(
+            cfg.task.env_runner,
+            output_dir=output_dir,
+            max_steps=400,
+            perturb_level=perturb)
+    else:
+        env_runner = hydra.utils.instantiate(
+            cfg.task.env_runner,
+            output_dir=output_dir)
 
     # set sampler
     env_runner.set_sampler(sampler, nsample, nmode, noise, decay)

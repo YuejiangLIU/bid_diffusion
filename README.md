@@ -98,8 +98,7 @@ The [notebook](notebook/dp.ipynb) script summarizes representative results from 
 
 | Vanilla Open-Loop          | Vanilla Closed-Loop       | EMA Closed-Loop        | BID Closed-Loop        |
 |:-------------------------:|:------------------------:|:----------------------:|:----------------------:|
-| <img src="animation/random/0.0/th16_oh2_ah8/media/20001.gif" width="180" /> | <img src="animation/random/0.0/th16_oh2_ah1/media/20001.gif" width="180" /> | <img src="animation/ema_0.5/0.0/th16_oh2_ah1/media/20001.gif" width="180" /> | <img src="animation/bid_15_0.5/0.0/th16_oh2_ah1/media/20001.gif" width="180" /> |
-
+| <img src="animation/random/0.0/th16_oh2_ah8/media/20001_g8ltak4r.gif" width="180" /> | <img src="animation/random/0.0/th16_oh2_ah1/media/20001_9tc351a0.gif" width="180" /> | <img src="animation/ema_0.5/0.0/th16_oh2_ah1/media/20001_muaalq4v.gif" width="180" /> | <img src="animation/bid_15_0.5/0.0/th16_oh2_ah1/media/20001_g5kg3yz5.gif" width="180" /> |
 
 ### Citation
 

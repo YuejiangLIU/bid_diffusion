@@ -218,24 +218,24 @@ class PushTEnv(gym.Env):
 
             # the clock is already ticked during in step for "human"
 
-        # Draw perturbation
-        if self.perturb > 0:
-            wind_direction = np.arctan2(self.perturb, self.perturb)
-            wind_arrow_length = 40  # Increased length for better visibility
-            center = (50, 50)  # Adjusted position for better placement
-            end_pos = (center[0] + int(wind_arrow_length * np.cos(wind_direction)),
-                       center[1] + int(wind_arrow_length * np.sin(wind_direction)))
-            pygame.draw.circle(canvas, (0, 0, 0), center, 40, 3)  # Increased radius and thickness
-            pygame.draw.line(canvas, (139, 0, 0), center, end_pos, 5)  # Dark red color
-            wind_magnitude = np.sqrt(self.perturb**2 + self.perturb**2)
-            max_wind_magnitude = 2  # Adjust this value according to your max wind magnitude
-            bar_length = 150  # Increased length for better visibility
-            bar_height = 30  # Increased height for better visibility
-            bar_x = self.window_size - bar_length - 10
-            bar_y = 10
-            pygame.draw.rect(canvas, (0, 0, 0), (bar_x, bar_y, bar_length, bar_height), 3)  # Thicker outline
-            filled_length = int(bar_length * (wind_magnitude / max_wind_magnitude))
-            pygame.draw.rect(canvas, (139, 0, 0), (bar_x, bar_y, filled_length, bar_height))  # Dark red fill
+        # # Draw perturbation
+        # if self.perturb > 0:
+        #     wind_direction = np.arctan2(self.perturb, self.perturb)
+        #     wind_arrow_length = 40  # Increased length for better visibility
+        #     center = (50, 50)  # Adjusted position for better placement
+        #     end_pos = (center[0] + int(wind_arrow_length * np.cos(wind_direction)),
+        #                center[1] + int(wind_arrow_length * np.sin(wind_direction)))
+        #     pygame.draw.circle(canvas, (0, 0, 0), center, 40, 3)  # Increased radius and thickness
+        #     pygame.draw.line(canvas, (139, 0, 0), center, end_pos, 5)  # Dark red color
+        #     wind_magnitude = np.sqrt(self.perturb**2 + self.perturb**2)
+        #     max_wind_magnitude = 2  # Adjust this value according to your max wind magnitude
+        #     bar_length = 150  # Increased length for better visibility
+        #     bar_height = 30  # Increased height for better visibility
+        #     bar_x = self.window_size - bar_length - 10
+        #     bar_y = 10
+        #     pygame.draw.rect(canvas, (0, 0, 0), (bar_x, bar_y, bar_length, bar_height), 3)  # Thicker outline
+        #     filled_length = int(bar_length * (wind_magnitude / max_wind_magnitude))
+        #     pygame.draw.rect(canvas, (139, 0, 0), (bar_x, bar_y, filled_length, bar_height))  # Dark red fill
 
         img = np.transpose(
                 np.array(pygame.surfarray.pixels3d(canvas)), axes=(1, 0, 2)
