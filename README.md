@@ -45,7 +45,7 @@ bash script/download_dataset.sh
 
 The [sampler](diffusion_policy/sampler) folder contains a collection of test-time sampling/decoding algorithms.
 
-- Random Sampling Baseline
+- Vanilla Sampling Baseline
 ```
 bash script/eval_random.sh
 ```
@@ -78,8 +78,8 @@ The [notebook](notebook/dp.ipynb) script summarizes representative results from 
 
 |method|result|
 |:----|:----|
-|Random (ah=1)|0.846|
-|Random (ah=8)|0.884|
+|Vanilla (ah=1)|0.846|
+|Vanilla (ah=8)|0.884|
 |Warmstart (ah=8)|0.875|
 |EMA (ah=8)|0.860|
 |BID (ah=8)|**0.916**|
@@ -88,15 +88,15 @@ The [notebook](notebook/dp.ipynb) script summarizes representative results from 
 
 |method|result|
 |:----|:----|
-|Random (ah=8)|0.582|
-|Random (ah=1)|0.805|
+|Vanilla (ah=8)|0.582|
+|Vanilla (ah=1)|0.805|
 |Warmstart (ah=1)|0.836|
 |EMA (ah=1)|0.822|
 |BID (ah=1)|**0.870**|
 
 ## Dynamics object (`perturb=1.0`)
 
-| Random Open-Loop          | Random Closed-Loop       | EMA Closed-Loop        | BID Closed-Loop        |
+| Vanilla Open-Loop          | Vanilla Closed-Loop       | EMA Closed-Loop        | BID Closed-Loop        |
 |:-------------------------:|:------------------------:|:----------------------:|:----------------------:|
 | <img src="animation/random/0.0/th16_oh2_ah8/media/20001.gif" width="180" /> | <img src="animation/random/0.0/th16_oh2_ah1/media/20001.gif" width="180" /> | <img src="animation/ema_0.5/0.0/th16_oh2_ah1/media/20001.gif" width="180" /> | <img src="animation/bid_15_0.5/0.0/th16_oh2_ah1/media/20001.gif" width="180" /> |
 
