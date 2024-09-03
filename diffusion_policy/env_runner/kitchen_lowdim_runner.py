@@ -47,7 +47,8 @@ class KitchenLowdimRunner(BaseLowdimRunner):
             tqdm_interval_sec=5.0,
             abs_action=False,
             robot_noise_ratio=0.1,
-            n_envs=None
+            n_envs=None,
+            perturb_level=0.0,
         ):
         super().__init__(output_dir)
 

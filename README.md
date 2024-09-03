@@ -65,11 +65,16 @@ bash script/eval_ema.sh
 bash script/eval_bid.sh
 ```
 
+- Qualitative comparison
+```
+bash script/animate_eval.sh
+```
+
 ### Expected Results
 
 The [notebook](notebook/dp.ipynb) script summarizes representative results from different algorithms for the Pust-T task in deterministic and stochastic environments.
 
-- Deterministic environment (`noise=0.0`)
+- Deterministic action (`noise=0.0`)
 
 |method|result|
 |:----|:----|
@@ -79,7 +84,7 @@ The [notebook](notebook/dp.ipynb) script summarizes representative results from 
 |EMA (ah=8)|0.860|
 |BID (ah=8)|**0.916**|
 
-- Stochastic environment (`noise=1.0`)
+- Stochastic action (`noise=1.0`)
 
 |method|result|
 |:----|:----|
@@ -88,6 +93,9 @@ The [notebook](notebook/dp.ipynb) script summarizes representative results from 
 |Warmstart (ah=1)|0.836|
 |EMA (ah=1)|0.822|
 |BID (ah=1)|**0.870**|
+
+- Dynamics object (`perturb=1.0`)
+
 
 ### Citation
 

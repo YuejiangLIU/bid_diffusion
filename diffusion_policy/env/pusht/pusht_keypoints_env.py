@@ -9,12 +9,13 @@ class PushTKeypointsEnv(PushTEnv):
             legacy=False,
             block_cog=None, 
             damping=None,
-            render_size=96,
+            render_size=288,
             keypoint_visible_rate=1.0, 
             agent_keypoints=False,
             draw_keypoints=False,
             reset_to_state=None,
-            render_action=True,
+            render_action=False,
+            perturb_level=0.0,
             local_keypoint_map: Dict[str, np.ndarray]=None, 
             color_map: Optional[Dict[str, np.ndarray]]=None):
         super().__init__(
@@ -23,7 +24,8 @@ class PushTKeypointsEnv(PushTEnv):
             damping=damping,
             render_size=render_size,
             reset_to_state=reset_to_state,
-            render_action=render_action)
+            render_action=render_action,
+            perturb_level=perturb_level)
         ws = self.window_size
 
         if local_keypoint_map is None:

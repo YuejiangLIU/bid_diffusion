@@ -24,6 +24,7 @@ import pdb
 @click.option('-c', '--checkpoint', required=True)
 @click.option('-o', '--output_dir', required=True)
 @click.option('-e', '--noise', default=0.0)
+@click.option('-p', '--perturb', default=0.0)
 @click.option('-ah', '--ahorizon', default=8)
 @click.option('-t', '--ntest', default=200)
 @click.option('-s', '--sampler', required=True)
@@ -32,7 +33,7 @@ import pdb
 @click.option('-k', '--decay', default=0.9)
 @click.option('-r', '--reference', default=None)
 @click.option('-d', '--device', default='cuda:0')
-def main(checkpoint, output_dir, noise, ahorizon, ntest, sampler, nsample, nmode, decay, reference, device):
+def main(checkpoint, output_dir, noise, perturb, ahorizon, ntest, sampler, nsample, nmode, decay, reference, device):
     if os.path.exists(output_dir):
         print(f"Output path {output_dir} already exists and will be overwrited.")
     pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
@@ -77,7 +78,7 @@ def main(checkpoint, output_dir, noise, ahorizon, ntest, sampler, nsample, nmode
 
     # turn off video
     cfg.task.env_runner['n_train_vis'] = 0
-    cfg.task.env_runner['n_test_vis'] = 0
+    cfg.task.env_runner['n_test_vis'] = 1
     cfg.task.env_runner['n_train'] = 1
     cfg.task.env_runner['n_test'] = ntest
     cfg.task.env_runner['n_action_steps'] = ahorizon
@@ -97,7 +98,8 @@ def main(checkpoint, output_dir, noise, ahorizon, ntest, sampler, nsample, nmode
     # run eval
     env_runner = hydra.utils.instantiate(
         cfg.task.env_runner,
-        output_dir=output_dir)
+        output_dir=output_dir,
+        perturb_level=perturb)
 
     # set sampler
     env_runner.set_sampler(sampler, nsample, nmode, noise, decay)

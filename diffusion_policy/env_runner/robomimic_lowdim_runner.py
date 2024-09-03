@@ -69,7 +69,8 @@ class RobomimicLowdimRunner(BaseLowdimRunner):
             past_action=False,
             abs_action=False,
             tqdm_interval_sec=5.0,
-            n_envs=None
+            n_envs=None,
+            perturb_level=0.0,
         ):
         """
         Assuming:

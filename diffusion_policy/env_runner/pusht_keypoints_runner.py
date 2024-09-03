@@ -43,6 +43,7 @@ class PushTKeypointsRunner(BaseLowdimRunner):
             past_action=False,
             tqdm_interval_sec=5.0,
             n_envs=None,
+            perturb_level=0.0,
         ):
         super().__init__(output_dir)
 
@@ -57,6 +58,7 @@ class PushTKeypointsRunner(BaseLowdimRunner):
 
         # assert n_obs_steps <= n_action_steps
         kp_kwargs = PushTKeypointsEnv.genenerate_keypoint_manager_params()
+        kp_kwargs['perturb_level'] = perturb_level
 
         def env_fn():
             return MultiStepWrapper(
@@ -125,7 +127,8 @@ class PushTKeypointsRunner(BaseLowdimRunner):
                 env.env.file_path = None
                 if enable_render:
                     filename = pathlib.Path(output_dir).joinpath(
-                        'media', wv.util.generate_id() + ".mp4")
+                        'media', f"{seed}_" + wv.util.generate_id() + ".mp4")
+                    print(filename)
                     filename.parent.mkdir(parents=False, exist_ok=True)
                     filename = str(filename)
                     env.env.file_path = filename
