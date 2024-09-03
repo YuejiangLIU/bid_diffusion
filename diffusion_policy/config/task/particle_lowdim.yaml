@@ -1,0 +1,29 @@
+name: particle_lowdim
+
+obs_dim: 4
+action_dim: 2
+
+env_runner:
+  _target_: diffusion_policy.env_runner.particle_lowdim_runner.ParticleLowdimRunner
+  n_train: 6
+  n_train_vis: 2
+  train_start_seed: 0
+  n_test: 50
+  n_test_vis: 4
+  test_start_seed: 100000
+  max_steps: 300
+  n_obs_steps: ${n_obs_steps}
+  n_action_steps: ${n_action_steps}
+  n_latency_steps: ${n_latency_steps}
+  fps: 10
+  past_action: ${past_action_visible}
+  n_envs: null
+
+dataset:
+  _target_: diffusion_policy.dataset.particle_lowdim_dataset.ParticleLowdimDataset
+  zarr_path: data/particle
+  horizon: ${horizon}
+  pad_before: ${eval:'${n_obs_steps}-1+${n_latency_steps}'}
+  pad_after: ${eval:'${n_action_steps}-1'}
+  seed: 42
+  val_ratio: 0.02
