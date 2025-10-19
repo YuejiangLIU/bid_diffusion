@@ -1,9 +1,9 @@
 # Bidirectional Decoding
 
-**[`Website`](https://bid-robot.github.io) | [`Paper`](https://arxiv.org/abs/2408.17355) | [`BiD + LeRobot`](https://github.com/Jubayer-Hamid/bid_lerobot) | [`BiD + Diffusion`](https://github.com/YuejiangLIU/bid_diffusion)**
+**[`🌐 Website`](https://bid-robot.github.io) | [`📄 Paper`](https://arxiv.org/abs/2408.17355) | [`🤗 BiD + LeRobot`](https://github.com/Jubayer-Hamid/bid_lerobot) | [`🤖 BiD + Diffusion`](https://github.com/YuejiangLIU/bid_diffusion)**
 
-This repo contains the official implementation of \
-Bidirectional Decoding: Improving Action Chunking via Closed-Loop Resampling. \
+**Bidirectional Decoding: Improving Action Chunking via Guided Test-Time Sampling** \
+International Conference on Learning Representations (ICLR) 2025 \
 <a href="https://sites.google.com/view/yuejiangliu/">Yuejiang Liu*</a>,
 <a href="https://jubayer-hamid.github.io/">Jubayer Ibn Hamid*</a>,
 <a href="https://anxie.github.io/">Annie Xie</a>,
@@ -121,11 +121,12 @@ BID offers increasing performance gains with larger sample sizes and complements
 
 If you find this code useful for your research, please consider citing our paper:
 ```bibtex
-@article{liu2024bid,
-  title   = {Bidirectional Decoding: Improving Action Chunking via Closed-Loop Resampling},
-  author  = {Liu, Yuejiang and Hamid, Jubayer Ibn and Xie, Annie and Lee, Yoonho and Du, Maximilian and Finn, Chelsea},
-  journal = {arXiv preprint arXiv:2408.17355},
-  year    = {2024}
+@inproceedings{liu2024bid,
+  title={Bidirectional Decoding: Improving Action Chunking via Guided Test-Time Sampling},
+  author={Yuejiang Liu and Jubayer Ibn Hamid and Annie Xie and Yoonho Lee and Max Du and Chelsea Finn},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=qZmn2hkuzw}
 }
 ```
 
